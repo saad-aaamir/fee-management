@@ -1,4 +1,4 @@
-package org.rak.microservicesassessment.dto;
+package org.rak.fee.dto;
 
 import org.springframework.http.ProblemDetail;
 
@@ -19,4 +19,7 @@ public class EndpointResponse<T> {
 	T data;
 	ProblemDetail problemDetail;
 
+	public EndpointResponse(ProblemDetail problemDetail) {
+		this.problemDetail = problemDetail;
+	}
 }
