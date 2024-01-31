@@ -46,6 +46,7 @@ public class FeeServiceImpl implements BusinessService<FeeDto> {
 
 	}
 
+
 	public FeeDto getFee(String type, String category, String subCategory, String frequency) {
 		return repository.findByTypeAndCategoryAndSubCategoryAndFrequency(type, category, subCategory, frequency)
 				.map(entity -> mapper.toDto(entity))

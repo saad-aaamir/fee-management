@@ -1,12 +1,9 @@
 package org.rak.fee.unit.fee;
 
 import org.rak.fee.dto.EndpointResponse;
-import org.rak.fee.interfaces.BusinessService;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,11 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "/fee")
 public class FeeController {
 
-	private BusinessService<FeeDto> businessService;
 	private FeeServiceImpl feeService;
 
-	public FeeController(BusinessService<FeeDto> businessService, FeeServiceImpl feeService) {
-		this.businessService = businessService;
+	public FeeController(FeeServiceImpl feeService) {
 		this.feeService = feeService;
 	}
 
@@ -34,17 +29,7 @@ public class FeeController {
 
 	@PostMapping
 	EndpointResponse<FeeDto> addFee(@RequestBody FeeDto feeDto){
-		return new EndpointResponse<>(businessService.create(feeDto), null);
-	}
-
-	@PutMapping
-	EndpointResponse<FeeDto> updateStudent(@RequestBody FeeDto feeDto, @PathVariable String uuid){
-		return new EndpointResponse<>(businessService.update(feeDto, uuid), null);
-	}
-
-	@DeleteMapping
-	void updateStudent(@PathVariable String uuid){
-		businessService.delete(uuid);
+		return new EndpointResponse<>(feeService.create(feeDto), null);
 	}
 
 }
