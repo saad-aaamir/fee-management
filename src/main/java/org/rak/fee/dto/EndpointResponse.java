@@ -1,14 +1,10 @@
 package org.rak.fee.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.http.ProblemDetail;
-
-/**
- * @author Usman
- * @created 1/23/2024 - 1:10 AM
- * @project Microservices-assessment
- */
-
-import lombok.*;
 
 @Getter
 @Setter

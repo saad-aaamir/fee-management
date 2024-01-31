@@ -2,14 +2,7 @@ package org.rak.fee.unit.fee;
 
 import org.rak.fee.dto.EndpointResponse;
 import org.rak.fee.interfaces.BusinessService;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(path = "/fee")
@@ -34,9 +27,7 @@ public class FeeController {
 
 	@PostMapping
 	EndpointResponse<FeeDto> addFee(@RequestBody FeeDto feeDto){
-		return new EndpointResponse<>(businessService.create(feeDto), null);
+		return new EndpointResponse<>(feeService.create(feeDto), null);
 	}
-
-
 
 }
