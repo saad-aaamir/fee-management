@@ -1,6 +1,6 @@
 # Fee Management Service
 
-Transaction Service is a Java application developed using Spring Boot (version 3.2.2) and Java 21. It serves as a backend service for handling fee Fee Mangements, viewing Fee Mangement details, and generating Fee Mangement receipts. The application utilizes an H2 database for data storage.
+Fee management Service is a Java application developed using Spring Boot (version 3.2.2) and Java 21. It serves as a backend service for handling fee Fee Mangements, viewing Fee Mangement details, and generating Fee Mangement receipts. The application utilizes an H2 database for data storage.
 
 ## Technologies
 
