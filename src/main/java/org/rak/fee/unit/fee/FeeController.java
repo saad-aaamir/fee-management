@@ -37,14 +37,6 @@ public class FeeController {
 		return new EndpointResponse<>(businessService.create(feeDto), null);
 	}
 
-	@PutMapping
-	EndpointResponse<FeeDto> updateStudent(@RequestBody FeeDto feeDto, @PathVariable String uuid){
-		return new EndpointResponse<>(businessService.update(feeDto, uuid), null);
-	}
 
-	@DeleteMapping
-	void updateStudent(@PathVariable String uuid){
-		businessService.delete(uuid);
-	}
 
 }
